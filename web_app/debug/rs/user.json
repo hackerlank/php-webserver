@@ -1,0 +1,45 @@
+{
+    "basePath": "http://s1.ztgame.com/",
+    "apis": [     
+	   {
+            "path": "?cmd=user.getUserInfo",
+            "description": "",
+            "operations": [
+                {
+                    "parameters": [
+                    ],
+                    "summary": "获取俱乐部信息",
+                    "httpMethod": "GET",
+                    "nickname": "获取俱乐部信息",
+                    "responseClass": "俱乐部信息"
+                }
+            ]
+        },
+        {
+            "path": "?cmd=user.updateUserIcon",
+            "description": "",
+            "operations": [
+                {
+                    "parameters": [
+                        {
+                            "name": "icon",
+                            "description": "icon",
+                            "required": true,
+                            "allowMultiple": false,
+                            "paramType": "base64",
+                            "dataType": "int"
+                        }
+                    ],
+                    "summary": "更换队徽",
+                    "httpMethod": "GET",
+                    "nickname": "更换队徽",
+                    "responseClass": "状态"
+                }
+            ]
+        }
+    ],
+    "apiVersion": "4.0",
+    "swaggerVersion": "1.0",
+    "models": {
+    }
+}

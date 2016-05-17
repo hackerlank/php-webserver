@@ -1,0 +1,155 @@
+<?PHP
+define('CURR_TIME',$_SERVER['REQUEST_TIME']);
+!defined('GLOBAL_CACHE') && define('GLOBAL_CACHE',true);	//php全局缓存
+class sys_define
+{
+	// database config
+	public static $main_db = array(
+		'host' => '10.31.38.36',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'hm_main_db',
+		);
+
+	public static $log_db = array(
+		'host' => '10.31.38.36',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'hm_log_db',
+		);
+		
+	public static $system_db = array(
+		'host' => '10.31.38.36',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'hm_system_db',
+		);
+	
+	/* chat db config */
+	public static $chat_db = array(
+			'host' => '10.31.38.36',
+			'port' => 3306,
+			'user' => 'cmmmo',
+			'pass' => 'cm_2010',
+			'dbn' => 'chat_log_db'
+	);
+	
+	public static $center_main_db = array(
+		'host' => '10.31.38.33',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'center_main_db'
+	);
+
+	public static $admin_db = array(
+		'host' => '172.30.10.176',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'hm_admin',
+	);	
+	
+	/*
+	 * api db config
+	 */
+	public static $api_db = array(
+		'host' => '10.31.38.33',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'center_api_db'
+	);
+		
+	// memcache config
+	public static $common_memcache = array(
+		0 => array('host' => '10.31.38.36','port' => 11211,),
+	);
+			
+	// memcache config
+	public static $login_memcache = array(
+		0 => array('host' => '10.31.38.36','port' => 11212,),
+	);
+
+	//通知服务器
+	public static $notice_server = array(
+		'host' => '10.31.38.36',
+		'port' => 11400,
+		'tube'=> 'testphone'
+	);	
+	
+	//充值通知服务器
+	public static $payment_notice_server = array(
+		'host' => '10.31.38.36',
+		'port' => 11400,
+		'tube'=> 'payment'
+	);
+	
+	public static $OS;
+
+	const MATCH_AI = '117.121.55.80';
+
+	    //工具生成js路径
+    const PROJECT_TOOLS_JS_PATH = 'F:\10.31.38.36\trunk\dev\web_server\web_app\js\common';
+	
+	// project name
+	const PROJECT_ENV_OUT = false; // 项目在外网环境运行
+	const PROJECT_NAME = 'fm';	
+	const PROJECT_PATH = '/home/www/web_server';
+	
+	//国际化
+	const PROJECT_LOCALE = 'E:\work\phone_dev\locale';
+	const PROJECT_LOCALE_NAME = 'default';
+
+	// memcache prefix
+	const MC_PREFIX_DAO = 'd';
+	
+	// AI config
+	public static $common_AI = array(
+		0 => array('host' => '172.30.69.36','port' => 8181,),
+		);
+	// hash database number
+	const HASH_MAX = 2;
+		
+	// other config
+	const DEBUG_MODE = true; // 是否打开调试模式
+	const LOG_QUERY = true; // 是否记录数据库操作和memcache操作	
+	
+	//log目录
+	const LOG_DIR = "/home/www/web_server/log";
+	
+	const API_TYPE ="cooperator";  //登录、扣费 等等	
+
+	// 测试模式
+	const IS_TEST = true;
+	
+	//Session模式
+	const SESSION_MODEL = true;
+	
+	//运营商列表,如果有多家用'|'隔开
+	const COOPERATOR_List = "sdo";
+
+	//游戏服(新服、老服区别)
+	const SEVERR_MODEL = 'old'; //新为new /新为new  老为old
+
+	//是否合服
+	const IS_COMBIND_SERVER = true;//是否合服
+	
+	//允许的区服列表,多个以"|"分隔,比如1001|1002
+	const ALLOW_SERVER = "10086";
+}
+
+
+//静态资源路径
+$_SERVER['static'] = 'http://172.30.69.36:81/';
+$_SERVER['static_cmol_put'] = 'http://172.30.69.36:82/';
+$_SERVER['static_sdo_get'] = 'http://172.30.69.36:83/';
+$_SERVER['envout'] = sys_define::PROJECT_ENV_OUT ? 1 : 0;
+$_SERVER['lang'] = 'zh_CN';
+$_SERVER['version']='1.2.2.1';
+$_SERVER['sound'] = 1;
+$_SERVER['match_view'] = '3D';
+$_SERVER['server_id'] = 39001;

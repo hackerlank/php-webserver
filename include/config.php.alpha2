@@ -1,0 +1,114 @@
+<?PHP
+define('CURR_TIME',$_SERVER['REQUEST_TIME']);
+!defined('GLOBAL_CACHE') && define('GLOBAL_CACHE',true);	//php全局缓存
+class sys_define
+{
+	// database config
+	public static $main_db = array(
+		'host' => '117.121.55.81',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'hm_main_db',
+		);
+
+	public static $log_db = array(
+		'host' => '117.121.55.81',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'hm_log_db',
+		);
+
+	public static $system_db = array(
+		'host' => '117.121.55.81',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'hm_system_db',
+		);
+	
+	/* api db config */
+	public static $api_db = array(
+		'host' => '117.121.55.81',
+		'port' => 3306,
+		'user' => 'hmmmo',
+		'pass' => 'hm_2013',
+		'dbn' => 'center_api_db'
+	);
+	
+		/* chat db config */
+	public static $chat_db = array(
+			'host' => '117.121.55.81',
+			'port' => 3306,
+			'user' => 'cmmmo',
+			'pass' => 'cm_2010',
+			'dbn' => 'chat_log_db'
+	);
+	
+		/* center main db config */
+	public static $center_main_db = array(
+			'host' => '117.121.55.81',
+			'port' => 3306,
+			'user' => 'cmmmo',
+			'pass' => 'cm_2010',
+			'dbn' => 'center_main_db'
+	);
+	
+	// hash database number
+	const HASH_MAX = 2;
+	public static $hash_db = array(
+		0 => array('host'=>'10.4.1.200','port'=>3306,'user'=>'tuitui','pass'=>'tuitui','dbn'=>'tuitui_app_'),
+		1 => array('host'=>'10.4.1.200','port'=>3306,'user'=>'tuitui','pass'=>'tuitui','dbn'=>'tuitui_app_'),
+		);
+		
+	// memcache config
+	public static $common_memcache = array(
+		0 => array('host' => '117.121.55.81','port' => 11211,),
+		);
+			
+	// memcache config
+	public static $login_memcache = array(
+			0 => array('host' => '117.121.55.81','port' => 11212,),
+	);
+
+	//通知服务器
+	public static $notice_server = array(
+		'host' => '117.121.55.81',
+		'port' => 11300,
+		'tube'=> 'testphone'
+	);	
+	
+	//充值通知服务器
+	public static $payment_notice_server = array(
+		'host' => '117.121.55.81',
+		'port' => 11300,
+		'tube'=> 'payment'
+	);
+	
+	const MATCH_AI = '117.121.55.80';
+
+	//工具生成js路径
+    const PROJECT_TOOLS_JS_PATH = 'F:\192.168.101.182\trunk\dev\web_server\web_app\js\common';
+	
+	// project name
+	const PROJECT_ENV_OUT = false; // 项目在外网环境运行
+	const PROJECT_NAME = 'fm';	
+	const PROJECT_PATH = '/home/www/web_server';
+	
+	//国际化
+	const PROJECT_LOCALE = 'E:\work\phone_dev\locale';
+	const PROJECT_LOCALE_NAME = 'default';
+		
+	// other config
+	const DEBUG_MODE = true; // 是否打开调试模式
+	const LOG_QUERY = true; // 是否记录数据库操作和memcache操作	
+	
+	//log目录
+	const LOG_DIR = "/home/www/web_server/log";
+
+	// 测试模式
+	const IS_TEST = true;
+}
+//服务器ID
+$_SERVER['server_id'] = 39001;

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log4php:configuration xmlns:log4php="http://logging.apache.org/log4php/" threshold="all">
+        <appender name="ErrorLog" class="LoggerAppenderRollingFile">
+            <param name="File" value="..\log\FM2014.Error.Log"/>
+            <param name="Append" value="true"/>
+            <param name="MaxBackupIndex" value="10"/>
+            <param name="MaxFileSize" value="5MB"/>
+            <layout class="LoggerLayoutPattern">
+                <param name="ConversionPattern" value="%d{ISO8601} [%p] %c: %m (at %F line %L)%n"/> 
+            </layout> 
+            <filter class="LoggerFilterLevelRange">
+                <param name="levelMax" value="ERROR"/>
+                <param name="levelMin" value="ERROR"/>    
+            </filter>
+        </appender>
+        <appender name="InfoLog" class="LoggerAppenderRollingFile">
+            <param name="File" value="..\log\FM2014.Info.Log"/>
+            <param name="Append" value="true"/>
+            <param name="MaxBackupIndex" value="10"/>
+            <param name="MaxFileSize" value="5MB"/>
+            <layout class="LoggerLayoutPattern">
+                <param name="ConversionPattern" value="%d{ISO8601} [%p] %c: %m (at %F line %L)%n"/> 
+            </layout> 
+            <filter class="LoggerFilterLevelRange">
+                <param name="levelMax" value="INFO"/>
+                <param name="levelMin" value="INFO"/>
+            </filter>
+        </appender>
+        <appender name="DebugLog" class="LoggerAppenderRollingFile">
+            <param name="File" value="..\log\FM2014.Debug.Log"/>
+            <param name="Append" value="true"/>
+            <param name="MaxBackupIndex" value="10"/>
+            <param name="MaxFileSize" value="5MB"/>          
+            <layout class="LoggerLayoutPattern">
+                <param name="ConversionPattern" value="%d{ISO8601} [%p] %c: %m (at %F line %L)%n"/> 
+            </layout>          
+            <filter class="LoggerFilterLevelRange">
+                <param name="levelMax" value="DEBUG"/>
+                <param name="levelMin" value="DEBUG"/>
+            </filter>
+        </appender>
+        <appender name="FatalLog" class="LoggerAppenderRollingFile">
+            <param name="File" value="..\log\FM2014.Fatal.Log"/>
+            <param name="Append" value="true"/>
+            <param name="MaxBackupIndex" value="10"/>
+            <param name="MaxFileSize" value="5MB"/>          
+            <layout class="LoggerLayoutPattern">
+                <param name="ConversionPattern" value="%d{ISO8601} [%p] %c: %m (at %F line %L)%n"/> 
+            </layout>          
+            <filter class="LoggerFilterLevelRange">
+                <param name="levelMax" value="Fatal"/>
+                <param name="levelMin" value="Fatal"/>
+            </filter>
+        </appender>
+        <root>
+            <level value="all"/>
+            <appender-ref ref="InfoLog"/> 
+            <appender-ref ref="ErrorLog"/> 
+            <appender-ref ref="DebugLog"/>  
+            <appender-ref ref="FatalLog"/>  
+        </root>
+</log4php:configuration>

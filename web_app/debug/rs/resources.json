@@ -1,0 +1,15 @@
+{
+    "basePath":"/debug/rs",    
+    "apiVersion":"0.2",
+    "swaggerVersion":"1.1",
+    "apis":[
+        {
+            "path":"/login.{format}",
+            "description":"帐号登录"
+        },
+        {
+            "path":"/user.{format}",
+            "description":"用户"
+        }
+    ]
+}

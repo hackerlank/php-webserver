@@ -1,0 +1,4 @@
+1. log4php支持相对目录
+	LoggerAppenderRollingFile文件 223 行
+		原 if (filesize($this->file) > $this->maxFileSize) {
+		新 if (filesize(realpath($this->file)) > $this->maxFileSize) {

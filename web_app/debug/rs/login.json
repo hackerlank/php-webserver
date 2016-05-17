@@ -1,0 +1,39 @@
+{
+    "basePath": "http://s1.ztgame.com/",
+    "apis": [
+        {
+            "path": "?cmd=login.login",
+            "description": "",
+            "operations": [
+                {
+                    "parameters": [                                                     
+                        {
+                            "name": "login_id",
+                            "description": "login_id",
+                            "required": true,
+                            "allowMultiple": false,
+                            "paramType": "base64",
+                            "dataType": "string"
+                        },
+                        {
+                            "name": "host_type",
+                            "description": "host_type",
+                            "required": true,
+                            "allowMultiple": false,
+                            "paramType": "base64",
+                            "dataType": "string"
+                        }                                   
+                    ],
+                    "summary": "用户登录",
+                    "httpMethod": "GET",
+                    "nickname": "用户登录",
+                    "responseClass": "登录信息"
+                }		
+            ]
+        }	
+    ],
+    "apiVersion": "4.0",
+    "swaggerVersion": "1.0",
+    "models": {
+    }
+}
